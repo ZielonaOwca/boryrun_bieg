@@ -359,17 +359,6 @@
             to { transform: rotate(360deg); }
         }
         
-        .footer {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 11px;
-            color: #555;
-        }
-        
-        .footer a {
-            color: #666;
-        }
-        
         .status-line {
             display: flex;
             justify-content: space-between;
@@ -391,6 +380,89 @@
         
         .error-message.show {
             display: block;
+        }
+        
+        /* Sekcja konkurencji - dyskretna na dole */
+        .competitor-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .competitor-header {
+            font-size: 11px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .competitor-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .competitor-info {
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .competitor-info .name {
+            color: #aaa;
+            font-weight: 500;
+        }
+        
+        .competitor-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .competitor-stats .stat {
+            text-align: center;
+        }
+        
+        .competitor-stats .num {
+            font-size: 16px;
+            font-weight: bold;
+            color: #888;
+        }
+        
+        .competitor-stats .lbl {
+            font-size: 9px;
+        }
+        
+        .competitor-total {
+            text-align: center;
+            padding: 8px 15px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+        }
+        
+        .competitor-total .num {
+            font-size: 22px;
+            font-weight: bold;
+            color: #999;
+        }
+        
+        .competitor-total .lbl {
+            font-size: 9px;
+            color: #666;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 10px;
+            color: #444;
+        }
+        
+        .footer a {
+            color: #555;
         }
         
         /* Kolory kategorii */
@@ -518,7 +590,7 @@
         </div>
     </div>
     
-    <button class="refresh-btn" id="refreshBtn" onclick="fetchData()">
+    <button class="refresh-btn" id="refreshBtn" onclick="fetchAllData()">
         <div class="spinner"></div>
         <span class="btn-text">🔄 Odśwież dane</span>
     </button>
@@ -528,14 +600,47 @@
         <span id="statusInfo"></span>
     </div>
     
+    <!-- Konkurencja - dyskretnie na dole -->
+    <div class="competitor-section">
+        <div class="competitor-header">Inne biegi w regionie</div>
+        <div class="competitor-card">
+            <div class="competitor-info">
+                <div class="name">Bolesławiec Run</div>
+                <div>Europejski Bieg na Zdrowie</div>
+            </div>
+            <div class="competitor-stats">
+                <div class="stat">
+                    <div class="num" id="bol21km">-</div>
+                    <div class="lbl">21km</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="bol10km">-</div>
+                    <div class="lbl">10km</div>
+                </div>
+                <div class="stat">
+                    <div class="num" id="bol5km">-</div>
+                    <div class="lbl">5km</div>
+                </div>
+            </div>
+            <div class="competitor-total">
+                <div class="num" id="bolTotal">-</div>
+                <div class="lbl">razem</div>
+            </div>
+        </div>
+    </div>
+    
     <div class="footer">
-        <a href="https://www.zmierzymyczas.pl/2404/boryrun-2026.html" target="_blank">🔗 Oficjalna strona zapisów</a>
+        <a href="https://www.zmierzymyczas.pl/2404/boryrun-2026.html" target="_blank">🔗 Zapisy BoryRun</a>
     </div>
 
     <script>
-        const TARGET_URL = 'https://www.zmierzymyczas.pl/2404/boryrun-2026.html';
+        const BORYRUN_URL = 'https://www.zmierzymyczas.pl/2404/boryrun-2026.html';
+        const BOLESLAWIEC_URLS = {
+            half: 'https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_polmaraton_1/11893',
+            ten: 'https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_europejski_bieg_na_zdrowie__10km/11894',
+            five: 'https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_europejski_bieg_na_zdrowie__5km/11895'
+        };
         
-        // Lista proxy CORS
         const PROXIES = [
             url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
             url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
@@ -555,84 +660,94 @@
             });
         });
         
-        async function tryFetch(proxyIndex = 0) {
-            if (proxyIndex >= PROXIES.length) {
-                throw new Error('Brak dostępnych serwerów proxy');
-            }
-            
-            const proxyUrl = PROXIES[proxyIndex](TARGET_URL);
-            document.getElementById('statusInfo').textContent = `proxy ${proxyIndex + 1}/${PROXIES.length}`;
+        async function tryFetch(url, proxyIndex = 0) {
+            if (proxyIndex >= PROXIES.length) throw new Error('Brak proxy');
             
             try {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 15000);
-                
-                const response = await fetch(proxyUrl, { signal: controller.signal });
+                const timeoutId = setTimeout(() => controller.abort(), 12000);
+                const response = await fetch(PROXIES[proxyIndex](url), { signal: controller.signal });
                 clearTimeout(timeoutId);
-                
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                
-                const text = await response.text();
-                if (!text.includes('BoryRun') && !text.includes('zmierzymyczas')) {
-                    throw new Error('Nieprawidłowa odpowiedź');
-                }
-                
-                return text;
+                return await response.text();
             } catch (error) {
-                console.log(`Proxy ${proxyIndex + 1} błąd:`, error.message);
-                return tryFetch(proxyIndex + 1);
+                return tryFetch(url, proxyIndex + 1);
             }
         }
         
-        async function fetchData() {
+        async function fetchBoryrun() {
+            const html = await tryFetch(BORYRUN_URL);
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            participants = [];
+            for (const table of doc.querySelectorAll('table')) {
+                if (table.innerHTML.includes('s=naz') || table.innerHTML.includes('Nazwisko')) {
+                    const rows = table.querySelectorAll('tr');
+                    for (let i = 1; i < rows.length; i++) {
+                        const cells = rows[i].querySelectorAll('td');
+                        if (cells.length >= 11 && cells[2].textContent.trim()) {
+                            participants.push({
+                                nazwisko: cells[2].textContent.trim(),
+                                imie: cells[3].textContent.trim(),
+                                plec: cells[4].textContent.trim(),
+                                kategoria: cells[6].textContent.trim(),
+                                miejscowosc: cells[8].textContent.trim(),
+                                klub: cells[9].textContent.trim(),
+                                oplacone: cells[10].textContent.includes('Zapłacono')
+                            });
+                        }
+                    }
+                    break;
+                }
+            }
+            
+            const freeMatch = doc.body.textContent.match(/Wolne miejsca[:\s]*(?:Zbiorczo[^:]*:\s*)?(\d+)/i);
+            return { participants, freeSpots: freeMatch ? parseInt(freeMatch[1]) : 0 };
+        }
+        
+        async function fetchBoleslawiec() {
+            const results = { half: 0, ten: 0, five: 0 };
+            
+            try {
+                const halfHtml = await tryFetch(BOLESLAWIEC_URLS.half);
+                results.half = Math.max(0, new DOMParser().parseFromString(halfHtml, 'text/html').querySelectorAll('table tr').length - 1);
+            } catch (e) {}
+            
+            try {
+                const tenHtml = await tryFetch(BOLESLAWIEC_URLS.ten);
+                results.ten = Math.max(0, new DOMParser().parseFromString(tenHtml, 'text/html').querySelectorAll('table tr').length - 1);
+            } catch (e) {}
+            
+            try {
+                const fiveHtml = await tryFetch(BOLESLAWIEC_URLS.five);
+                results.five = Math.max(0, new DOMParser().parseFromString(fiveHtml, 'text/html').querySelectorAll('table tr').length - 1);
+            } catch (e) {}
+            
+            return results;
+        }
+        
+        async function fetchAllData() {
             const btn = document.getElementById('refreshBtn');
             const errorMsg = document.getElementById('errorMessage');
             
             btn.classList.add('loading');
             btn.disabled = true;
             errorMsg.classList.remove('show');
+            document.getElementById('statusInfo').textContent = 'pobieranie...';
             
             try {
-                const html = await tryFetch(0);
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
+                const [boryrunData, boleslawiecData] = await Promise.all([
+                    fetchBoryrun().catch(e => ({ participants: [], freeSpots: 0 })),
+                    fetchBoleslawiec().catch(e => ({ half: 0, ten: 0, five: 0 }))
+                ]);
                 
-                // Parsowanie uczestników
-                participants = [];
-                const tables = doc.querySelectorAll('table');
-                
-                for (const table of tables) {
-                    if (table.innerHTML.includes('s=naz') || table.innerHTML.includes('Nazwisko')) {
-                        const rows = table.querySelectorAll('tr');
-                        for (let i = 1; i < rows.length; i++) {
-                            const cells = rows[i].querySelectorAll('td');
-                            if (cells.length >= 11 && cells[2].textContent.trim()) {
-                                participants.push({
-                                    nazwisko: cells[2].textContent.trim(),
-                                    imie: cells[3].textContent.trim(),
-                                    plec: cells[4].textContent.trim(),
-                                    kategoria: cells[6].textContent.trim(),
-                                    miejscowosc: cells[8].textContent.trim(),
-                                    klub: cells[9].textContent.trim(),
-                                    oplacone: cells[10].textContent.includes('Zapłacono')
-                                });
-                            }
-                        }
-                        break;
-                    }
-                }
-                
-                // Wolne miejsca
-                const pageText = doc.body.textContent;
-                const freeMatch = pageText.match(/Wolne miejsca[:\s]*(?:Zbiorczo[^:]*:\s*)?(\d+)/i);
-                const freeSpots = freeMatch ? parseInt(freeMatch[1]) : 0;
-                
-                updateUI(participants, freeSpots);
+                updateBoryrunUI(boryrunData);
+                updateBoleslawiecUI(boleslawiecData);
                 document.getElementById('statusInfo').textContent = '✓';
                 
             } catch (error) {
-                console.error('Błąd:', error);
-                errorMsg.innerHTML = `⚠️ ${error.message}<br><small>Spróbuj ponownie za chwilę</small>`;
+                errorMsg.innerHTML = `⚠️ ${error.message}`;
                 errorMsg.classList.add('show');
                 document.getElementById('statusInfo').textContent = '✗';
             } finally {
@@ -641,7 +756,8 @@
             }
         }
         
-        function updateUI(participants, freeSpots) {
+        function updateBoryrunUI(data) {
+            const { participants, freeSpots } = data;
             const total = participants.length;
             const paid = participants.filter(p => p.oplacone).length;
             const limit = total + freeSpots;
@@ -651,13 +767,11 @@
             previousCount = total;
             localStorage.setItem('boryrun_prev_count', total.toString());
             
-            // Główne statystyki
             document.getElementById('totalCount').textContent = total;
             document.getElementById('freeSpots').textContent = freeSpots;
             document.getElementById('paidCount').textContent = paid;
             document.getElementById('unpaidCount').textContent = total - paid;
             
-            // Zmiana
             const changeEl = document.getElementById('changeIndicator');
             if (change > 0) {
                 changeEl.textContent = `+${change} nowych`;
@@ -670,7 +784,6 @@
                 changeEl.className = 'change';
             }
             
-            // Pasek postępu
             document.getElementById('progressPercent').textContent = percent + '%';
             document.getElementById('progressFill').style.width = percent + '%';
             
@@ -685,7 +798,7 @@
                 document.getElementById('bar-' + cat).style.width = (count / maxCat * 100) + '%';
             });
             
-            // Lista uczestników
+            // Lista
             const catNames = { '42KM': '42km', '21KM': '21km', '10KM': '10km', 'SM10KM': 'Mund.', 'NW5KM': 'NW' };
             document.getElementById('participantsList').innerHTML = participants.map((p, i) => `
                 <div class="participant">
@@ -696,39 +809,39 @@
                     </div>
                     <div class="participant-category">${catNames[p.kategoria] || p.kategoria}</div>
                 </div>
-            `).join('');
+            `).join('') || '<div class="participant"><div class="participant-info"><div class="participant-name">Brak danych</div></div></div>';
             
-            // Statystyki płci
+            // Statystyki
             document.getElementById('stat-men').textContent = participants.filter(p => p.plec === 'M').length;
             document.getElementById('stat-women').textContent = participants.filter(p => p.plec === 'K').length;
             
-            // Top miasta
             const cities = {};
             participants.forEach(p => { if (p.miejscowosc) cities[p.miejscowosc] = (cities[p.miejscowosc] || 0) + 1; });
             document.getElementById('topCities').innerHTML = Object.entries(cities)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 5)
+                .sort((a, b) => b[1] - a[1]).slice(0, 5)
                 .map(([city, count]) => `<div class="stats-row"><span>${city}</span><span>${count}</span></div>`)
                 .join('') || '<div class="stats-row"><span>—</span><span></span></div>';
             
-            // Top kluby
             const clubs = {};
             participants.forEach(p => { if (p.klub) clubs[p.klub] = (clubs[p.klub] || 0) + 1; });
             document.getElementById('topClubs').innerHTML = Object.entries(clubs)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 5)
+                .sort((a, b) => b[1] - a[1]).slice(0, 5)
                 .map(([club, count]) => `<div class="stats-row"><span>${club}</span><span>${count}</span></div>`)
                 .join('') || '<div class="stats-row"><span>—</span><span></span></div>';
             
-            // Czas aktualizacji
             document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' });
         }
         
-        // Start
-        fetchData();
+        function updateBoleslawiecUI(data) {
+            document.getElementById('bol21km').textContent = data.half || 0;
+            document.getElementById('bol10km').textContent = data.ten || 0;
+            document.getElementById('bol5km').textContent = data.five || 0;
+            document.getElementById('bolTotal').textContent = (data.half || 0) + (data.ten || 0) + (data.five || 0);
+        }
         
-        // Auto-odświeżanie co 5 minut
-        setInterval(fetchData, 5 * 60 * 1000);
+        // Start
+        fetchAllData();
+        setInterval(fetchAllData, 5 * 60 * 1000);
     </script>
 </body>
 </html>
