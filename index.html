@@ -1,847 +1,140 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="BoryRun">
-    <meta name="theme-color" content="#27ae60">
-    <link rel="apple-touch-icon" href="icon.png">
-    <link rel="icon" type="image/png" href="icon.png">
-    <title>BoryRun 2026 - Monitor Zapisów</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            color: white;
-            padding: 20px;
-            padding-top: max(env(safe-area-inset-top), 20px);
-            padding-bottom: max(env(safe-area-inset-bottom), 20px);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .header h1 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        
-        .header .subtitle {
-            font-size: 12px;
-            color: #a0a0a0;
-        }
-        
-        .main-stat {
-            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 15px;
-            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
-        }
-        
-        .main-stat .number {
-            font-size: 64px;
-            font-weight: bold;
-            line-height: 1;
-        }
-        
-        .main-stat .label {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-        
-        .main-stat .change {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        
-        .main-stat .change.positive {
-            background: rgba(255,255,255,0.3);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .stat-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 15px 10px;
-            text-align: center;
-        }
-        
-        .stat-card .number {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .stat-card .label {
-            font-size: 10px;
-            color: #a0a0a0;
-            margin-top: 3px;
-        }
-        
-        .progress-section {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 12px;
-        }
-        
-        .progress-bar {
-            height: 12px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 6px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #27ae60, #2ecc71);
-            border-radius: 6px;
-            transition: width 0.5s ease;
-        }
-        
-        .categories {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .category-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        
-        .category-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .category-icon {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-        
-        .category-name {
-            flex: 1;
-            font-size: 13px;
-        }
-        
-        .category-bar {
-            width: 60px;
-            height: 6px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 3px;
-            margin-right: 10px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        
-        .category-bar-fill {
-            height: 100%;
-            border-radius: 3px;
-            transition: width 0.5s ease;
-        }
-        
-        .category-count {
-            font-size: 14px;
-            font-weight: bold;
-            width: 35px;
-            text-align: right;
-            flex-shrink: 0;
-        }
-        
-        .tabs {
-            display: flex;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 4px;
-            margin-bottom: 15px;
-        }
-        
-        .tab {
-            flex: 1;
-            padding: 10px 5px;
-            text-align: center;
-            border-radius: 10px;
-            font-size: 11px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .tab.active {
-            background: #27ae60;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .participants-list {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            max-height: 350px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .participant {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .participant:last-child {
-            border-bottom: none;
-        }
-        
-        .participant-number {
-            width: 30px;
-            font-size: 12px;
-            color: #a0a0a0;
-            flex-shrink: 0;
-        }
-        
-        .participant-info {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .participant-name {
-            font-size: 14px;
-            font-weight: 500;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .participant-details {
-            font-size: 11px;
-            color: #a0a0a0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .participant-category {
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.2);
-            flex-shrink: 0;
-            margin-left: 8px;
-        }
-        
-        .stats-list {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 15px;
-        }
-        
-        .stats-section {
-            margin-bottom: 20px;
-        }
-        
-        .stats-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .stats-section h4 {
-            font-size: 12px;
-            color: #a0a0a0;
-            margin-bottom: 10px;
-        }
-        
-        .stats-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-        }
-        
-        .stats-row:last-child {
-            border-bottom: none;
-        }
-        
-        .stats-row span:first-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            margin-right: 10px;
-        }
-        
-        .refresh-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .refresh-btn:active {
-            transform: scale(0.98);
-            opacity: 0.9;
-        }
-        
-        .refresh-btn:disabled {
-            opacity: 0.6;
-        }
-        
-        .refresh-btn .spinner {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        .refresh-btn.loading .spinner {
-            display: block;
-        }
-        
-        .refresh-btn.loading .btn-text {
-            display: none;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .status-line {
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: #666;
-            margin-top: 10px;
-        }
-        
-        .error-message {
-            background: rgba(231, 76, 60, 0.2);
-            border: 1px solid #e74c3c;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 15px;
-            display: none;
-            font-size: 13px;
-        }
-        
-        .error-message.show {
-            display: block;
-        }
-        
-        /* Sekcja konkurencji - dyskretna na dole */
-        .competitor-section {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .competitor-header {
-            font-size: 11px;
-            color: #555;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        
-        .competitor-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 10px;
-            padding: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .competitor-info {
-            font-size: 12px;
-            color: #888;
-        }
-        
-        .competitor-info .name {
-            color: #aaa;
-            font-weight: 500;
-        }
-        
-        .competitor-stats {
-            display: flex;
-            gap: 15px;
-            font-size: 11px;
-            color: #666;
-        }
-        
-        .competitor-stats .stat {
-            text-align: center;
-        }
-        
-        .competitor-stats .num {
-            font-size: 16px;
-            font-weight: bold;
-            color: #888;
-        }
-        
-        .competitor-stats .lbl {
-            font-size: 9px;
-        }
-        
-        .competitor-total {
-            text-align: center;
-            padding: 8px 15px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 8px;
-        }
-        
-        .competitor-total .num {
-            font-size: 22px;
-            font-weight: bold;
-            color: #999;
-        }
-        
-        .competitor-total .lbl {
-            font-size: 9px;
-            color: #666;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 10px;
-            color: #444;
-        }
-        
-        .footer a {
-            color: #555;
-        }
-        
-        /* Kolory kategorii */
-        .cat-42KM { background: #e74c3c; }
-        .cat-21KM { background: #3498db; }
-        .cat-10KM { background: #2ecc71; }
-        .cat-SM10KM { background: #9b59b6; }
-        .cat-NW5KM { background: #f39c12; }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>🏃 BoryRun 2026</h1>
-        <div class="subtitle">Kliczków • 24 maja 2026 • Zamek Kliczków</div>
-    </div>
-    
-    <div class="error-message" id="errorMessage">
-        ⚠️ Nie udało się pobrać danych. Spróbuj ponownie.
-    </div>
-    
-    <div class="main-stat">
-        <div class="number" id="totalCount">--</div>
-        <div class="label">zapisanych uczestników</div>
-        <div class="change" id="changeIndicator">ładowanie...</div>
-    </div>
-    
-    <div class="stats-grid">
-        <div class="stat-card">
-            <div class="number" id="freeSpots">--</div>
-            <div class="label">wolnych miejsc</div>
-        </div>
-        <div class="stat-card">
-            <div class="number" id="paidCount">--</div>
-            <div class="label">opłaconych</div>
-        </div>
-        <div class="stat-card">
-            <div class="number" id="unpaidCount">--</div>
-            <div class="label">nieopłaconych</div>
-        </div>
-    </div>
-    
-    <div class="progress-section">
-        <div class="progress-header">
-            <span>Zapełnienie</span>
-            <span id="progressPercent">--%</span>
-        </div>
-        <div class="progress-bar">
-            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-        </div>
-    </div>
-    
-    <div class="tabs">
-        <div class="tab active" data-tab="categories">📊 Kategorie</div>
-        <div class="tab" data-tab="participants">👥 Lista</div>
-        <div class="tab" data-tab="stats">📈 Statystyki</div>
-    </div>
-    
-    <div class="tab-content active" id="tab-categories">
-        <div class="categories">
-            <div class="category-item">
-                <div class="category-icon cat-42KM"></div>
-                <div class="category-name">Maraton (42 km)</div>
-                <div class="category-bar"><div class="category-bar-fill cat-42KM" id="bar-42KM"></div></div>
-                <div class="category-count" id="count-42KM">0</div>
-            </div>
-            <div class="category-item">
-                <div class="category-icon cat-21KM"></div>
-                <div class="category-name">Półmaraton (21 km)</div>
-                <div class="category-bar"><div class="category-bar-fill cat-21KM" id="bar-21KM"></div></div>
-                <div class="category-count" id="count-21KM">0</div>
-            </div>
-            <div class="category-item">
-                <div class="category-icon cat-10KM"></div>
-                <div class="category-name">Bieg na 10 km</div>
-                <div class="category-bar"><div class="category-bar-fill cat-10KM" id="bar-10KM"></div></div>
-                <div class="category-count" id="count-10KM">0</div>
-            </div>
-            <div class="category-item">
-                <div class="category-icon cat-SM10KM"></div>
-                <div class="category-name">Mundurowy 10 km</div>
-                <div class="category-bar"><div class="category-bar-fill cat-SM10KM" id="bar-SM10KM"></div></div>
-                <div class="category-count" id="count-SM10KM">0</div>
-            </div>
-            <div class="category-item">
-                <div class="category-icon cat-NW5KM"></div>
-                <div class="category-name">Nordic Walking 5 km</div>
-                <div class="category-bar"><div class="category-bar-fill cat-NW5KM" id="bar-NW5KM"></div></div>
-                <div class="category-count" id="count-NW5KM">0</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="tab-content" id="tab-participants">
-        <div class="participants-list" id="participantsList">
-            <div class="participant">
-                <div class="participant-number">--</div>
-                <div class="participant-info">
-                    <div class="participant-name">Ładowanie danych...</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="tab-content" id="tab-stats">
-        <div class="stats-list">
-            <div class="stats-section">
-                <h4>👥 Płeć</h4>
-                <div class="stats-row">
-                    <span>Mężczyźni</span>
-                    <span id="stat-men">0</span>
-                </div>
-                <div class="stats-row">
-                    <span>Kobiety</span>
-                    <span id="stat-women">0</span>
-                </div>
-            </div>
-            <div class="stats-section">
-                <h4>🏘️ Top 5 miast</h4>
-                <div id="topCities"></div>
-            </div>
-            <div class="stats-section">
-                <h4>🏅 Top kluby</h4>
-                <div id="topClubs"></div>
-            </div>
-        </div>
-    </div>
-    
-    <button class="refresh-btn" id="refreshBtn" onclick="fetchAllData()">
-        <div class="spinner"></div>
-        <span class="btn-text">🔄 Odśwież dane</span>
-    </button>
-    
-    <div class="status-line">
-        <span id="lastUpdate">--</span>
-        <span id="statusInfo"></span>
-    </div>
-    
-    <!-- Konkurencja - dyskretnie na dole -->
-    <div class="competitor-section">
-        <div class="competitor-header">Inne biegi w regionie</div>
-        <div class="competitor-card">
-            <div class="competitor-info">
-                <div class="name">Bolesławiec Run</div>
-                <div>Europejski Bieg na Zdrowie</div>
-            </div>
-            <div class="competitor-stats">
-                <div class="stat">
-                    <div class="num" id="bol21km">-</div>
-                    <div class="lbl">21km</div>
-                </div>
-                <div class="stat">
-                    <div class="num" id="bol10km">-</div>
-                    <div class="lbl">10km</div>
-                </div>
-                <div class="stat">
-                    <div class="num" id="bol5km">-</div>
-                    <div class="lbl">5km</div>
-                </div>
-            </div>
-            <div class="competitor-total">
-                <div class="num" id="bolTotal">-</div>
-                <div class="lbl">razem</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer">
-        <a href="https://www.zmierzymyczas.pl/2404/boryrun-2026.html" target="_blank">🔗 Zapisy BoryRun</a>
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoryRun 2026 - Monitor</title>
 
-    <script>
-        const BORYRUN_URL = 'https://www.zmierzymyczas.pl/2404/boryrun-2026.html';
-        const BOLESLAWIEC_URLS = {
-            half: 'https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_polmaraton_1/11893',
-            ten: 'https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_europejski_bieg_na_zdrowie__10km/11894',
-            five: 'https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_europejski_bieg_na_zdrowie__5km/11895'
-        };
-        
-        const PROXIES = [
-            url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-            url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-            url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
-        ];
-        
-        let previousCount = parseInt(localStorage.getItem('boryrun_prev_count') || '0');
-        let participants = [];
-        
-        // Obsługa zakładek
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                tab.classList.add('active');
-                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-            });
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+h1 { margin-bottom: 10px; }
+.countdown { font-size: 18px; margin-bottom: 20px; color: #94a3b8; }
+.main-number { font-size: 64px; font-weight: bold; }
+.progress-box { margin-top: 20px; }
+.progress { height: 20px; background: #1e293b; border-radius: 10px; overflow: hidden; }
+.progress-bar { height: 100%; background: #22c55e; width: 0%; transition: 0.5s; }
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: white;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🏃 BoryRun 2026</h1>
+
+<div class="countdown" id="countdown">⏳ ładowanie...</div>
+
+<div class="main-number" id="total">--</div>
+<div>zapisanych uczestników</div>
+
+<div class="progress-box">
+    <div id="percent">--%</div>
+    <div class="progress">
+        <div class="progress-bar" id="bar"></div>
+    </div>
+</div>
+
+<button onclick="loadData()">🔄 Odśwież</button>
+
+<script>
+const URL = "https://www.zmierzymyczas.pl/2404/boryrun-2026.html";
+const EVENT_DATE = new Date("2026-05-24T09:00:00");
+const LIMIT = 500;
+
+const PROXY = url => "https://api.allorigins.win/raw?url=" + encodeURIComponent(url);
+
+async function fetchHTML(url) {
+    const res = await fetch(PROXY(url));
+    return await res.text();
+}
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = EVENT_DATE - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").innerText = "START!";
+        return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+
+    document.getElementById("countdown").innerText =
+        `⏳ ${d} dni ${h} godz ${m} min`;
+}
+
+function getSummary(doc) {
+    const el = doc.querySelector(".zapisy_impreza_info_value");
+    return el ? parseInt(el.textContent.trim()) : null;
+}
+
+async function getParticipantsCount() {
+    let total = 0;
+    let start = 0;
+
+    while (true) {
+        const html = await fetchHTML(URL + "?start=" + start);
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        let count = 0;
+
+        doc.querySelectorAll("table").forEach(table => {
+            if (table.innerHTML.includes("Nazwisko")) {
+                const rows = table.querySelectorAll("tr");
+                count += rows.length - 1;
+            }
         });
-        
-        async function tryFetch(url, proxyIndex = 0) {
-            if (proxyIndex >= PROXIES.length) throw new Error('Brak proxy');
-            
-            try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 12000);
-                const response = await fetch(PROXIES[proxyIndex](url), { signal: controller.signal });
-                clearTimeout(timeoutId);
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                return await response.text();
-            } catch (error) {
-                return tryFetch(url, proxyIndex + 1);
-            }
-        }
-        
-        async function fetchBoryrun() {
-            const html = await tryFetch(BORYRUN_URL);
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            participants = [];
-            for (const table of doc.querySelectorAll('table')) {
-                if (table.innerHTML.includes('s=naz') || table.innerHTML.includes('Nazwisko')) {
-                    const rows = table.querySelectorAll('tr');
-                    for (let i = 1; i < rows.length; i++) {
-                        const cells = rows[i].querySelectorAll('td');
-                        if (cells.length >= 11 && cells[2].textContent.trim()) {
-                            participants.push({
-                                nazwisko: cells[2].textContent.trim(),
-                                imie: cells[3].textContent.trim(),
-                                plec: cells[4].textContent.trim(),
-                                kategoria: cells[6].textContent.trim(),
-                                miejscowosc: cells[8].textContent.trim(),
-                                klub: cells[9].textContent.trim(),
-                                oplacone: cells[10].textContent.includes('Zapłacono')
-                            });
-                        }
-                    }
-                    break;
-                }
-            }
-            
-            const freeMatch = doc.body.textContent.match(/Wolne miejsca[:\s]*(?:Zbiorczo[^:]*:\s*)?(\d+)/i);
-            return { participants, freeSpots: freeMatch ? parseInt(freeMatch[1]) : 0 };
-        }
-        
-        async function fetchBoleslawiec() {
-            const results = { half: 0, ten: 0, five: 0 };
-            
-            try {
-                const halfHtml = await tryFetch(BOLESLAWIEC_URLS.half);
-                results.half = Math.max(0, new DOMParser().parseFromString(halfHtml, 'text/html').querySelectorAll('table tr').length - 1);
-            } catch (e) {}
-            
-            try {
-                const tenHtml = await tryFetch(BOLESLAWIEC_URLS.ten);
-                results.ten = Math.max(0, new DOMParser().parseFromString(tenHtml, 'text/html').querySelectorAll('table tr').length - 1);
-            } catch (e) {}
-            
-            try {
-                const fiveHtml = await tryFetch(BOLESLAWIEC_URLS.five);
-                results.five = Math.max(0, new DOMParser().parseFromString(fiveHtml, 'text/html').querySelectorAll('table tr').length - 1);
-            } catch (e) {}
-            
-            return results;
-        }
-        
-        async function fetchAllData() {
-            const btn = document.getElementById('refreshBtn');
-            const errorMsg = document.getElementById('errorMessage');
-            
-            btn.classList.add('loading');
-            btn.disabled = true;
-            errorMsg.classList.remove('show');
-            document.getElementById('statusInfo').textContent = 'pobieranie...';
-            
-            try {
-                const [boryrunData, boleslawiecData] = await Promise.all([
-                    fetchBoryrun().catch(e => ({ participants: [], freeSpots: 0 })),
-                    fetchBoleslawiec().catch(e => ({ half: 0, ten: 0, five: 0 }))
-                ]);
-                
-                updateBoryrunUI(boryrunData);
-                updateBoleslawiecUI(boleslawiecData);
-                document.getElementById('statusInfo').textContent = '✓';
-                
-            } catch (error) {
-                errorMsg.innerHTML = `⚠️ ${error.message}`;
-                errorMsg.classList.add('show');
-                document.getElementById('statusInfo').textContent = '✗';
-            } finally {
-                btn.classList.remove('loading');
-                btn.disabled = false;
-            }
-        }
-        
-        function updateBoryrunUI(data) {
-            const { participants, freeSpots } = data;
-            const total = participants.length;
-            const paid = participants.filter(p => p.oplacone).length;
-            const limit = total + freeSpots;
-            const percent = limit > 0 ? Math.round((total / limit) * 100) : 0;
-            
-            const change = previousCount > 0 ? total - previousCount : 0;
-            previousCount = total;
-            localStorage.setItem('boryrun_prev_count', total.toString());
-            
-            document.getElementById('totalCount').textContent = total;
-            document.getElementById('freeSpots').textContent = freeSpots;
-            document.getElementById('paidCount').textContent = paid;
-            document.getElementById('unpaidCount').textContent = total - paid;
-            
-            const changeEl = document.getElementById('changeIndicator');
-            if (change > 0) {
-                changeEl.textContent = `+${change} nowych`;
-                changeEl.className = 'change positive';
-            } else if (change < 0) {
-                changeEl.textContent = `${change}`;
-                changeEl.className = 'change';
-            } else {
-                changeEl.textContent = previousCount > 0 ? 'bez zmian' : `limit: ${limit}`;
-                changeEl.className = 'change';
-            }
-            
-            document.getElementById('progressPercent').textContent = percent + '%';
-            document.getElementById('progressFill').style.width = percent + '%';
-            
-            // Kategorie
-            const categories = {};
-            participants.forEach(p => categories[p.kategoria] = (categories[p.kategoria] || 0) + 1);
-            const maxCat = Math.max(...Object.values(categories), 1);
-            
-            ['42KM', '21KM', '10KM', 'SM10KM', 'NW5KM'].forEach(cat => {
-                const count = categories[cat] || 0;
-                document.getElementById('count-' + cat).textContent = count;
-                document.getElementById('bar-' + cat).style.width = (count / maxCat * 100) + '%';
-            });
-            
-            // Lista
-            const catNames = { '42KM': '42km', '21KM': '21km', '10KM': '10km', 'SM10KM': 'Mund.', 'NW5KM': 'NW' };
-            document.getElementById('participantsList').innerHTML = participants.map((p, i) => `
-                <div class="participant">
-                    <div class="participant-number">${i + 1}</div>
-                    <div class="participant-info">
-                        <div class="participant-name">${p.imie} ${p.nazwisko}</div>
-                        <div class="participant-details">${p.miejscowosc || '—'}${p.klub ? ' • ' + p.klub : ''}</div>
-                    </div>
-                    <div class="participant-category">${catNames[p.kategoria] || p.kategoria}</div>
-                </div>
-            `).join('') || '<div class="participant"><div class="participant-info"><div class="participant-name">Brak danych</div></div></div>';
-            
-            // Statystyki
-            document.getElementById('stat-men').textContent = participants.filter(p => p.plec === 'M').length;
-            document.getElementById('stat-women').textContent = participants.filter(p => p.plec === 'K').length;
-            
-            const cities = {};
-            participants.forEach(p => { if (p.miejscowosc) cities[p.miejscowosc] = (cities[p.miejscowosc] || 0) + 1; });
-            document.getElementById('topCities').innerHTML = Object.entries(cities)
-                .sort((a, b) => b[1] - a[1]).slice(0, 5)
-                .map(([city, count]) => `<div class="stats-row"><span>${city}</span><span>${count}</span></div>`)
-                .join('') || '<div class="stats-row"><span>—</span><span></span></div>';
-            
-            const clubs = {};
-            participants.forEach(p => { if (p.klub) clubs[p.klub] = (clubs[p.klub] || 0) + 1; });
-            document.getElementById('topClubs').innerHTML = Object.entries(clubs)
-                .sort((a, b) => b[1] - a[1]).slice(0, 5)
-                .map(([club, count]) => `<div class="stats-row"><span>${club}</span><span>${count}</span></div>`)
-                .join('') || '<div class="stats-row"><span>—</span><span></span></div>';
-            
-            document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' });
-        }
-        
-        function updateBoleslawiecUI(data) {
-            document.getElementById('bol21km').textContent = data.half || 0;
-            document.getElementById('bol10km').textContent = data.ten || 0;
-            document.getElementById('bol5km').textContent = data.five || 0;
-            document.getElementById('bolTotal').textContent = (data.half || 0) + (data.ten || 0) + (data.five || 0);
-        }
-        
-        // Start
-        fetchAllData();
-        setInterval(fetchAllData, 5 * 60 * 1000);
-    </script>
+
+        total += count;
+
+        if (count < 100) break;
+        start += 100;
+    }
+
+    return total;
+}
+
+async function loadData() {
+    try {
+        const html = await fetchHTML(URL);
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        const summary = getSummary(doc);
+        const participants = await getParticipantsCount();
+
+        const total = summary || participants;
+        const percent = Math.round((total / LIMIT) * 100);
+
+        document.getElementById("total").innerText = total;
+        document.getElementById("percent").innerText = percent + "%";
+        document.getElementById("bar").style.width = percent + "%";
+
+    } catch (e) {
+        console.error("Błąd:", e);
+    }
+}
+
+loadData();
+updateCountdown();
+
+setInterval(loadData, 300000);
+setInterval(updateCountdown, 60000);
+</script>
+
 </body>
 </html>
