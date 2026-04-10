@@ -13,18 +13,29 @@ body {
     text-align: center;
     padding: 20px;
 }
-.main { font-size: 60px; }
-.small { font-size: 12px; color: #777; margin-top: 30px; }
+h1 { margin-bottom: 5px; }
+.countdown { color: #94a3b8; margin-bottom: 20px; }
+
+.main {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.small {
+    font-size: 12px;
+    color: #777;
+    margin-top: 30px;
+}
 </style>
 </head>
 
 <body>
 
 <h1>🏃 BoryRun 2026</h1>
-<div id="countdown">⏳</div>
+<div class="countdown" id="countdown">⏳ ładowanie...</div>
 
 <div class="main" id="total">--</div>
-<div>zapisanych</div>
+<div>zapisanych uczestników</div>
 
 <div>
 💰 <span id="paid">--</span> |
@@ -33,84 +44,106 @@ body {
 </div>
 
 <div class="small">
-Inne biegi: <span id="bol">--</span>
+Inne biegi w regionie: <span id="bol">--</span>
 </div>
 
-<button onclick="load()">Odśwież</button>
+<br>
+<button onclick="load()">🔄 Odśwież</button>
 
 <script>
 const EVENT = "https://www.zmierzymyczas.pl/2404/boryrun-2026.html";
 const MAIN = "https://www.zmierzymyczas.pl/";
 const KIDS = "https://www.boryrun.pl/rejestracja";
 
-const PROXY = url => "https://api.allorigins.win/raw?url=" + encodeURIComponent(url);
+const PROXIES = [
+    url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+];
 
-// COUNTDOWN
+// ===== FETCH =====
+async function get(url, i = 0) {
+    if (i >= PROXIES.length) throw new Error("Proxy padły");
+
+    try {
+        const res = await fetch(PROXIES[i](url));
+        if (!res.ok) throw new Error();
+        return await res.text();
+    } catch {
+        return get(url, i + 1);
+    }
+}
+
+// ===== COUNTDOWN =====
 function countdown() {
     const end = new Date("2026-05-24T09:00:00");
     const diff = end - new Date();
 
-    if (diff <= 0) return document.getElementById("countdown").innerText = "START";
+    if (diff <= 0) {
+        document.getElementById("countdown").innerText = "START!";
+        return;
+    }
 
     const d = Math.floor(diff / 86400000);
     const h = Math.floor(diff / 3600000 % 24);
     const m = Math.floor(diff / 60000 % 60);
 
     document.getElementById("countdown").innerText =
-        `${d} dni ${h}h ${m}m`;
+        `⏳ ${d} dni ${h}h ${m}m`;
 }
 
-// FETCH
-async function get(url) {
-    const res = await fetch(PROXY(url));
-    return await res.text();
-}
-
-// LOAD
+// ===== LOAD DATA =====
 async function load() {
     try {
-        // 1. opłaceni
+        // ===== OPŁACENI =====
         const html1 = await get(EVENT);
         const doc1 = new DOMParser().parseFromString(html1, "text/html");
-        const paidEl = doc1.querySelector(".zapisy_impreza_info_value");
-        const paid = paidEl ? parseInt(paidEl.textContent) : 0;
 
-        // 2. wszyscy
+        let paid = 0;
+        const paidEl = doc1.querySelector(".zapisy_impreza_info_value");
+        if (paidEl) {
+            paid = parseInt(paidEl.textContent.replace(/\D/g,'')) || 0;
+        }
+
+        // ===== WSZYSCY =====
         const html2 = await get(MAIN);
         const doc2 = new DOMParser().parseFromString(html2, "text/html");
+
         let total = 0;
         doc2.querySelectorAll("a").forEach(a => {
-            if (a.getAttribute("href") === "/2404/boryrun-2026.html") {
-                total = parseInt(a.textContent);
+            const href = a.getAttribute("href") || "";
+            if (href.includes("boryrun-2026")) {
+                const val = parseInt(a.textContent.replace(/\D/g,''));
+                if (val > total) total = val;
             }
         });
 
-        // 3. dzieci
+        // ===== DZIECI =====
         const html3 = await get(KIDS);
-        const doc3 = new DOMParser().parseFromString(html3, "text/html");
-        const kidsEl = doc3.querySelector(".RegistrationForm-module__yvop-q__spotsCount");
-        const kids = kidsEl ? parseInt(kidsEl.textContent) : 0;
+        let kids = 0;
+        const match = html3.match(/spotsCount[^>]*>(\d+)/);
+        if (match) kids = parseInt(match[1]);
 
-        // 4. konkurencja (1 strona tylko – szybciej)
+        // ===== KONKURENCJA =====
         const html4 = await get("https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_polmaraton_1/11893");
         const doc4 = new DOMParser().parseFromString(html4, "text/html");
         const bol = Math.max(0, doc4.querySelectorAll("table tr").length - 1);
 
         const unpaid = total - paid;
 
-        document.getElementById("total").innerText = total;
-        document.getElementById("paid").innerText = paid;
-        document.getElementById("unpaid").innerText = unpaid;
-        document.getElementById("kids").innerText = kids;
-        document.getElementById("bol").innerText = bol;
+        // ===== UI =====
+        document.getElementById("total").innerText = total || "--";
+        document.getElementById("paid").innerText = paid || "--";
+        document.getElementById("unpaid").innerText = unpaid >= 0 ? unpaid : "--";
+        document.getElementById("kids").innerText = kids || "--";
+        document.getElementById("bol").innerText = bol || "--";
 
     } catch (e) {
+        console.error("Błąd:", e);
         document.getElementById("total").innerText = "błąd";
-        console.error(e);
     }
 }
 
-// START
+// ===== START =====
 load();
 countdown();
 
