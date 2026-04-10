@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BoryRun 2026 - Monitor</title>
+<title>BoryRun 2026 - Dashboard</title>
 
 <style>
 body {
@@ -13,20 +13,22 @@ body {
     text-align: center;
     padding: 20px;
 }
-h1 { margin-bottom: 10px; }
-.countdown { font-size: 18px; margin-bottom: 20px; color: #94a3b8; }
-.main-number { font-size: 64px; font-weight: bold; }
-.progress-box { margin-top: 20px; }
-.progress { height: 20px; background: #1e293b; border-radius: 10px; overflow: hidden; }
-.progress-bar { height: 100%; background: #22c55e; width: 0%; transition: 0.5s; }
-button {
-    margin-top: 20px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #3b82f6;
-    color: white;
-    font-size: 16px;
+h1 { margin-bottom: 5px; }
+.countdown { color: #94a3b8; margin-bottom: 20px; }
+
+.main-number {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.section {
+    margin-top: 15px;
+}
+
+.small {
+    font-size: 12px;
+    color: #666;
+    margin-top: 30px;
 }
 </style>
 </head>
@@ -34,31 +36,48 @@ button {
 <body>
 
 <h1>🏃 BoryRun 2026</h1>
-
 <div class="countdown" id="countdown">⏳ ładowanie...</div>
 
 <div class="main-number" id="total">--</div>
 <div>zapisanych uczestników</div>
 
-<div class="progress-box">
-    <div id="percent">--%</div>
-    <div class="progress">
-        <div class="progress-bar" id="bar"></div>
-    </div>
+<div class="section">
+    💰 Opłaceni: <span id="paid">--</span><br>
+    🕒 Nieopłaceni: <span id="unpaid">--</span><br>
+    👶 Dzieci: <span id="kids">--</span>
+</div>
+
+<div class="section">
+    <h3>📊 Kategorie</h3>
+    <div id="categories">--</div>
+</div>
+
+<div class="small">
+    Inne biegi w regionie: <span id="bol">--</span> uczestników
 </div>
 
 <button onclick="loadData()">🔄 Odśwież</button>
 
 <script>
-const URL = "https://www.zmierzymyczas.pl/2404/boryrun-2026.html";
+const EVENT_URL = "https://www.zmierzymyczas.pl/2404/boryrun-2026.html";
+const MAIN_URL = "https://www.zmierzymyczas.pl/";
+const KIDS_URL = "https://www.boryrun.pl/rejestracja";
 const EVENT_DATE = new Date("2026-05-24T09:00:00");
-const LIMIT = 500;
 
-const PROXY = url => "https://api.allorigins.win/raw?url=" + encodeURIComponent(url);
+const PROXIES = [
+    url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+];
 
-async function fetchHTML(url) {
-    const res = await fetch(PROXY(url));
-    return await res.text();
+async function fetchHTML(url, i = 0) {
+    if (i >= PROXIES.length) throw new Error("Proxy error");
+    try {
+        const res = await fetch(PROXIES[i](url));
+        if (!res.ok) throw new Error();
+        return await res.text();
+    } catch {
+        return fetchHTML(url, i + 1);
+    }
 }
 
 function updateCountdown() {
@@ -70,25 +89,40 @@ function updateCountdown() {
         return;
     }
 
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff / (1000*60*60)) % 24);
+    const m = Math.floor((diff / (1000*60)) % 60);
 
     document.getElementById("countdown").innerText =
-        `⏳ ${d} dni ${h} godz ${m} min`;
+        `⏳ ${d} dni ${h}h ${m}m`;
 }
 
-function getSummary(doc) {
+function getPaid(doc) {
     const el = doc.querySelector(".zapisy_impreza_info_value");
-    return el ? parseInt(el.textContent.trim()) : null;
+    return el ? parseInt(el.textContent.trim()) : 0;
 }
 
-async function getParticipantsCount() {
-    let total = 0;
+function getTotal(doc) {
+    const links = doc.querySelectorAll("a");
+    for (let a of links) {
+        if (a.getAttribute("href") === "/2404/boryrun-2026.html") {
+            return parseInt(a.textContent.trim());
+        }
+    }
+    return 0;
+}
+
+function getKids(doc) {
+    const el = doc.querySelector(".RegistrationForm-module__yvop-q__spotsCount");
+    return el ? parseInt(el.textContent.trim()) : 0;
+}
+
+async function getCategories() {
+    let categories = {};
     let start = 0;
 
     while (true) {
-        const html = await fetchHTML(URL + "?start=" + start);
+        const html = await fetchHTML(EVENT_URL + "?start=" + start);
         const doc = new DOMParser().parseFromString(html, "text/html");
 
         let count = 0;
@@ -96,14 +130,57 @@ async function getParticipantsCount() {
         doc.querySelectorAll("table").forEach(table => {
             if (table.innerHTML.includes("Nazwisko")) {
                 const rows = table.querySelectorAll("tr");
-                count += rows.length - 1;
+
+                for (let i = 1; i < rows.length; i++) {
+                    const cells = rows[i].querySelectorAll("td");
+                    if (cells.length >= 7) {
+                        const cat = cells[6].textContent.trim();
+                        categories[cat] = (categories[cat] || 0) + 1;
+                        count++;
+                    }
+                }
             }
         });
 
-        total += count;
-
         if (count < 100) break;
         start += 100;
+    }
+
+    return categories;
+}
+
+function renderCategories(categories) {
+    const names = {
+        "42KM": "Maraton",
+        "21KM": "Półmaraton",
+        "10KM": "10 km",
+        "SM10KM": "Mundurowy",
+        "NW5KM": "Nordic Walking"
+    };
+
+    let html = "";
+    for (let key in names) {
+        html += `${names[key]}: ${categories[key] || 0}<br>`;
+    }
+
+    document.getElementById("categories").innerHTML = html;
+}
+
+async function getBoleslawiec() {
+    const urls = [
+        "https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_polmaraton_1/11893",
+        "https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_europejski_bieg_na_zdrowie__10km/11894",
+        "https://b4sportonline.pl/boleslawiec_run/lista_uczestnikow_europejski_bieg_na_zdrowie__5km/11895"
+    ];
+
+    let total = 0;
+
+    for (let url of urls) {
+        try {
+            const html = await fetchHTML(url);
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            total += Math.max(0, doc.querySelectorAll("table tr").length - 1);
+        } catch {}
     }
 
     return total;
@@ -111,18 +188,31 @@ async function getParticipantsCount() {
 
 async function loadData() {
     try {
-        const html = await fetchHTML(URL);
-        const doc = new DOMParser().parseFromString(html, "text/html");
+        const [eventHTML, mainHTML, kidsHTML, categories, bol] = await Promise.all([
+            fetchHTML(EVENT_URL),
+            fetchHTML(MAIN_URL),
+            fetchHTML(KIDS_URL),
+            getCategories(),
+            getBoleslawiec()
+        ]);
 
-        const summary = getSummary(doc);
-        const participants = await getParticipantsCount();
+        const eventDoc = new DOMParser().parseFromString(eventHTML, "text/html");
+        const mainDoc = new DOMParser().parseFromString(mainHTML, "text/html");
+        const kidsDoc = new DOMParser().parseFromString(kidsHTML, "text/html");
 
-        const total = summary || participants;
-        const percent = Math.round((total / LIMIT) * 100);
+        const paid = getPaid(eventDoc);
+        const total = getTotal(mainDoc);
+        const kids = getKids(kidsDoc);
+        const unpaid = total - paid;
 
         document.getElementById("total").innerText = total;
-        document.getElementById("percent").innerText = percent + "%";
-        document.getElementById("bar").style.width = percent + "%";
+        document.getElementById("paid").innerText = paid;
+        document.getElementById("unpaid").innerText = unpaid;
+        document.getElementById("kids").innerText = kids;
+
+        renderCategories(categories);
+
+        document.getElementById("bol").innerText = bol;
 
     } catch (e) {
         console.error("Błąd:", e);
@@ -132,7 +222,7 @@ async function loadData() {
 loadData();
 updateCountdown();
 
-setInterval(loadData, 300000);
+setInterval(loadData, 60000);
 setInterval(updateCountdown, 60000);
 </script>
 
