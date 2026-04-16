@@ -1,0 +1,5 @@
+{
+  "adults": {"total": null, "paid": null, "limit": 700, "participants": []},
+  "kids": {"registered": null, "limit": 300},
+  "updated": null
+}
