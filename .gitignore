@@ -1,0 +1,29 @@
+# Claude Code / AI tooling
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv_*/
+venv/
+env/
+*.egg-info/
+
+# Sekrety / lokalna konfiguracja
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+
+# Edytory / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System operacyjny
+.DS_Store
+Thumbs.db
+desktop.ini
