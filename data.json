@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 236,
-    "paid": 148,
+    "total": 238,
+    "paid": 149,
     "limit": 700,
     "participants": [
       {
@@ -1335,6 +1335,15 @@
         "miejscowosc": "Olszanica",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Michał",
+        "nazwisko": "Jednoróg",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1342,5 +1351,5 @@
     "registered": 139,
     "limit": 300
   },
-  "updated": "2026-04-19T13:04:07Z"
+  "updated": "2026-04-19T14:05:05Z"
 }
