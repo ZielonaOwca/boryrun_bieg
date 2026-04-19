@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 232,
-    "paid": 147,
+    "total": 233,
+    "paid": 148,
     "limit": 700,
     "participants": [
       {
@@ -1326,6 +1326,15 @@
         "miejscowosc": "Tomaszów Bolesławiecki",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Radosław",
+        "nazwisko": "Wojtecki",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Olszanica",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1333,5 +1342,5 @@
     "registered": 138,
     "limit": 300
   },
-  "updated": "2026-04-19T11:07:53Z"
+  "updated": "2026-04-19T11:50:47Z"
 }
