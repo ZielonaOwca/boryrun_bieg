@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 238,
-    "paid": 149,
+    "total": 239,
+    "paid": 150,
     "limit": 700,
     "participants": [
       {
@@ -1344,6 +1344,15 @@
         "miejscowosc": "Bolesławiec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Aleksander",
+        "nazwisko": "Wielgosz",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Zgorzelec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1351,5 +1360,5 @@
     "registered": 139,
     "limit": 300
   },
-  "updated": "2026-04-19T15:49:11Z"
+  "updated": "2026-04-19T16:41:54Z"
 }
