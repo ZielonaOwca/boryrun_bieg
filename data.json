@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 239,
-    "paid": 150,
+    "total": 240,
+    "paid": 151,
     "limit": 700,
     "participants": [
       {
@@ -1353,6 +1353,15 @@
         "miejscowosc": "Zgorzelec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Wojciech",
+        "nazwisko": "Lizurek",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1360,5 +1369,5 @@
     "registered": 139,
     "limit": 300
   },
-  "updated": "2026-04-19T17:22:32Z"
+  "updated": "2026-04-19T18:02:44Z"
 }
