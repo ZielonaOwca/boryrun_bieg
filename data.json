@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 244,
-    "paid": 153,
+    "total": 246,
+    "paid": 154,
     "limit": 700,
     "participants": [
       {
@@ -1380,6 +1380,15 @@
         "miejscowosc": "Bolesławiec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Michał Paweł",
+        "nazwisko": "Brzezowski",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Osiecznica",
+        "klub": "KP PSP Bolesławiec",
+        "oplacone": true
       }
     ]
   },
@@ -1387,5 +1396,5 @@
     "registered": 142,
     "limit": 300
   },
-  "updated": "2026-04-20T10:58:14Z"
+  "updated": "2026-04-20T12:10:10Z"
 }
