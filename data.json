@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 246,
-    "paid": 154,
+    "total": 247,
+    "paid": 155,
     "limit": 700,
     "participants": [
       {
@@ -1389,6 +1389,15 @@
         "miejscowosc": "Osiecznica",
         "klub": "KP PSP Bolesławiec",
         "oplacone": true
+      },
+      {
+        "imie": "Andrzej",
+        "nazwisko": "Śliwowski",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Złotoryja",
+        "klub": "KP PSP Bolesławiec",
+        "oplacone": true
       }
     ]
   },
@@ -1396,5 +1405,5 @@
     "registered": 142,
     "limit": 300
   },
-  "updated": "2026-04-20T12:10:10Z"
+  "updated": "2026-04-20T14:12:55Z"
 }
