@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 271,
-    "paid": 155,
+    "total": 273,
+    "paid": 157,
     "limit": 700,
     "participants": [
       {
@@ -1398,6 +1398,24 @@
         "miejscowosc": "Złotoryja",
         "klub": "KP PSP Bolesławiec",
         "oplacone": true
+      },
+      {
+        "imie": "Dawid",
+        "nazwisko": "Mierzwa",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "KP PSP Bolesławiec",
+        "oplacone": true
+      },
+      {
+        "imie": "Piotr",
+        "nazwisko": "Pater",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Zgorzelec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1405,5 +1423,5 @@
     "registered": 146,
     "limit": 300
   },
-  "updated": "2026-04-22T12:13:31Z"
+  "updated": "2026-04-22T14:11:48Z"
 }
