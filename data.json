@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 274,
-    "paid": 158,
+    "total": 276,
+    "paid": 159,
     "limit": 700,
     "participants": [
       {
@@ -1425,6 +1425,15 @@
         "miejscowosc": "Chojnów",
         "klub": "Oldtimer Chojnów",
         "oplacone": true
+      },
+      {
+        "imie": "Iwona",
+        "nazwisko": "Berezowska",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Chojnów",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1432,5 +1441,5 @@
     "registered": 147,
     "limit": 300
   },
-  "updated": "2026-04-22T20:30:46Z"
+  "updated": "2026-04-22T21:37:18Z"
 }
