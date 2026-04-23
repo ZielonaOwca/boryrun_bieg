@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 277,
-    "paid": 160,
+    "total": 278,
+    "paid": 161,
     "limit": 700,
     "participants": [
       {
@@ -1443,12 +1443,21 @@
         "miejscowosc": "Chojnów",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Krystian",
+        "nazwisko": "Karasiewicz",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Osieczów",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 147,
+    "registered": 148,
     "limit": 300
   },
-  "updated": "2026-04-23T15:00:35Z"
+  "updated": "2026-04-23T16:53:08Z"
 }
