@@ -24,11 +24,11 @@
       },
       {
         "imie": "Barbara",
-        "nazwisko": "Jòźwik",
+        "nazwisko": "Jóźwik",
         "plec": "K",
         "kategoria": "21KM",
         "miejscowosc": "Zielonka",
-        "klub": "bjozwik@interia.pl",
+        "klub": "",
         "oplacone": true
       },
       {
@@ -1495,5 +1495,5 @@
     "registered": 153,
     "limit": 300
   },
-  "updated": "2026-04-26T15:23:12Z"
+  "updated": "2026-04-26T16:06:29Z"
 }
