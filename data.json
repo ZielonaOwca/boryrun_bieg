@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 298,
-    "paid": 162,
+    "total": 299,
+    "paid": 163,
     "limit": 700,
     "participants": [
       {
@@ -1461,6 +1461,15 @@
         "miejscowosc": "Osieczów",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Małgorzata",
+        "nazwisko": "Orzoł",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "Brak",
+        "oplacone": true
       }
     ]
   },
@@ -1468,5 +1477,5 @@
     "registered": 153,
     "limit": 300
   },
-  "updated": "2026-04-26T11:23:25Z"
+  "updated": "2026-04-26T12:04:03Z"
 }
