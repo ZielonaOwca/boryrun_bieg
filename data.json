@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 299,
-    "paid": 163,
+    "total": 305,
+    "paid": 164,
     "limit": 700,
     "participants": [
       {
@@ -1470,6 +1470,15 @@
         "miejscowosc": "Bolesławiec",
         "klub": "Brak",
         "oplacone": true
+      },
+      {
+        "imie": "Ewa",
+        "nazwisko": "Słonina",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1477,5 +1486,5 @@
     "registered": 153,
     "limit": 300
   },
-  "updated": "2026-04-26T12:04:03Z"
+  "updated": "2026-04-26T13:41:26Z"
 }
