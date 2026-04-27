@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 318,
-    "paid": 169,
+    "total": 320,
+    "paid": 170,
     "limit": 700,
     "participants": [
       {
@@ -1524,6 +1524,15 @@
         "miejscowosc": "Nawojów Śląski",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Łukasz",
+        "nazwisko": "Leśniak",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Złotoryja",
+        "klub": "KPP Bolesławiec",
+        "oplacone": true
       }
     ]
   },
@@ -1531,5 +1540,5 @@
     "registered": 153,
     "limit": 300
   },
-  "updated": "2026-04-27T08:30:44Z"
+  "updated": "2026-04-27T10:35:12Z"
 }
