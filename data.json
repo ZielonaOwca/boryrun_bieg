@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 328,
-    "paid": 179,
+    "paid": 180,
     "limit": 700,
     "participants": [
       {
@@ -1499,6 +1499,15 @@
         "oplacone": true
       },
       {
+        "imie": "Emilia",
+        "nazwisko": "Dwojna",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Poświętne, Pow. Bolesławiecki",
+        "klub": "Poświętne Team",
+        "oplacone": true
+      },
+      {
         "imie": "Krystian",
         "nazwisko": "Karasiewicz",
         "plec": "M",
@@ -1621,5 +1630,5 @@
     "registered": 158,
     "limit": 300
   },
-  "updated": "2026-04-29T16:55:49Z"
+  "updated": "2026-04-29T18:13:11Z"
 }
