@@ -1,6 +1,6 @@
 {
   "adults": {
-    "total": 332,
+    "total": 333,
     "paid": 186,
     "limit": 700,
     "participants": [
@@ -953,7 +953,7 @@
         "imie": "Łukasz",
         "nazwisko": "Grzyb",
         "plec": "M",
-        "kategoria": "21KM",
+        "kategoria": "10KM",
         "miejscowosc": "Malczyce",
         "klub": "Wałowa Grupa Biegowa",
         "oplacone": true
@@ -1681,8 +1681,8 @@
     ]
   },
   "kids": {
-    "registered": 163,
+    "registered": 164,
     "limit": 300
   },
-  "updated": "2026-05-01T16:38:53Z"
+  "updated": "2026-05-01T17:41:50Z"
 }
