@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 330,
-    "paid": 184,
+    "total": 331,
+    "paid": 186,
     "limit": 700,
     "participants": [
       {
@@ -1328,6 +1328,15 @@
         "oplacone": true
       },
       {
+        "imie": "Maciej",
+        "nazwisko": "Laskowski",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Iłowa",
+        "klub": "Budowlani Darts Gozdnica",
+        "oplacone": true
+      },
+      {
         "imie": "Andriy",
         "nazwisko": "Samilyak",
         "plec": "M",
@@ -1643,6 +1652,15 @@
         "oplacone": true
       },
       {
+        "imie": "Arkadiusz",
+        "nazwisko": "Kupczak",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "Pieczarkarnia A.Kupczak",
+        "oplacone": true
+      },
+      {
         "imie": "Zdzisław",
         "nazwisko": "Augustyn",
         "plec": "M",
@@ -1663,8 +1681,8 @@
     ]
   },
   "kids": {
-    "registered": 161,
+    "registered": 162,
     "limit": 300
   },
-  "updated": "2026-05-01T07:13:15Z"
+  "updated": "2026-05-01T09:12:46Z"
 }
