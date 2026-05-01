@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 334,
-    "paid": 187,
+    "total": 335,
+    "paid": 188,
     "limit": 700,
     "participants": [
       {
@@ -1686,12 +1686,21 @@
         "miejscowosc": "Bolesławiec",
         "klub": "KLUB BIEGACZA BOLESŁAWIEC",
         "oplacone": true
+      },
+      {
+        "imie": "Angelika",
+        "nazwisko": "Kameduła",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Legnica",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 165,
+    "registered": 166,
     "limit": 300
   },
-  "updated": "2026-05-01T20:04:58Z"
+  "updated": "2026-05-01T21:08:16Z"
 }
