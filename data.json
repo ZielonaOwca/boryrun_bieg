@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 343,
-    "paid": 195,
+    "paid": 196,
     "limit": 700,
     "participants": [
       {
@@ -838,6 +838,15 @@
         "plec": "K",
         "kategoria": "10KM",
         "miejscowosc": "Kielce",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Sławomir",
+        "nazwisko": "Błaszczyk",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Siedlec",
         "klub": "",
         "oplacone": true
       },
@@ -1762,8 +1771,8 @@
     ]
   },
   "kids": {
-    "registered": 171,
+    "registered": 174,
     "limit": 300
   },
-  "updated": "2026-05-04T07:24:12Z"
+  "updated": "2026-05-04T09:36:46Z"
 }
