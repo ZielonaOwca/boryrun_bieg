@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 355,
-    "paid": 212,
+    "total": 356,
+    "paid": 213,
     "limit": 700,
     "participants": [
       {
@@ -1911,6 +1911,15 @@
         "miejscowosc": "Lwówek Śląski",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Adam",
+        "nazwisko": "Bartosiewicz",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Gryfino",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1918,5 +1927,5 @@
     "registered": 178,
     "limit": 300
   },
-  "updated": "2026-05-05T16:11:21Z"
+  "updated": "2026-05-05T17:50:54Z"
 }
