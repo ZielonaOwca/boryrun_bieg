@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 353,
-    "paid": 205,
+    "total": 354,
+    "paid": 209,
     "limit": 700,
     "participants": [
       {
@@ -1733,6 +1733,15 @@
         "oplacone": true
       },
       {
+        "imie": "Kazimierz",
+        "nazwisko": "Zając",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "KLUB BIEGACZA BOLESŁAWIEC",
+        "oplacone": true
+      },
+      {
         "imie": "Agnieszka",
         "nazwisko": "Pisarek-Grzesiak",
         "plec": "K",
@@ -1796,6 +1805,15 @@
         "oplacone": true
       },
       {
+        "imie": "Paweł",
+        "nazwisko": "Linke",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Osiecznica",
+        "klub": "",
+        "oplacone": true
+      },
+      {
         "imie": "Anna",
         "nazwisko": "Sponar",
         "plec": "K",
@@ -1848,6 +1866,24 @@
         "miejscowosc": "Bolesławiec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Bartosz",
+        "nazwisko": "Karwat",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Lwówek Śląski",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Mirosław",
+        "nazwisko": "Sakowski",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "II Liceum Ogólnokształcące im. Janusza Korczaka w Bolesławcu",
+        "oplacone": true
       }
     ]
   },
@@ -1855,5 +1891,5 @@
     "registered": 176,
     "limit": 300
   },
-  "updated": "2026-05-05T09:20:32Z"
+  "updated": "2026-05-05T11:00:45Z"
 }
