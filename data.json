@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 354,
-    "paid": 209,
+    "total": 356,
+    "paid": 211,
     "limit": 700,
     "participants": [
       {
@@ -1884,6 +1884,24 @@
         "miejscowosc": "Bolesławiec",
         "klub": "II Liceum Ogólnokształcące im. Janusza Korczaka w Bolesławcu",
         "oplacone": true
+      },
+      {
+        "imie": "Krystian",
+        "nazwisko": "Blarasini",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Ocice",
+        "klub": "Brak",
+        "oplacone": true
+      },
+      {
+        "imie": "Katarzyna",
+        "nazwisko": "Jewtuch",
+        "plec": "K",
+        "kategoria": "21KM",
+        "miejscowosc": "Lwówek Śląski",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1891,5 +1909,5 @@
     "registered": 176,
     "limit": 300
   },
-  "updated": "2026-05-05T11:00:45Z"
+  "updated": "2026-05-05T12:13:02Z"
 }
