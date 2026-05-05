@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 356,
-    "paid": 213,
+    "total": 357,
+    "paid": 214,
     "limit": 700,
     "participants": [
       {
@@ -1920,6 +1920,15 @@
         "miejscowosc": "Gryfino",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Piotr",
+        "nazwisko": "Dyjecki",
+        "plec": "M",
+        "kategoria": "42KM",
+        "miejscowosc": "Tomaszów Bolesławiecki",
+        "klub": "CSW ATLAS COPCO POLSKA",
+        "oplacone": true
       }
     ]
   },
@@ -1927,5 +1936,5 @@
     "registered": 178,
     "limit": 300
   },
-  "updated": "2026-05-05T17:50:54Z"
+  "updated": "2026-05-05T19:20:56Z"
 }
