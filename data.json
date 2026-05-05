@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 357,
-    "paid": 215,
+    "total": 358,
+    "paid": 216,
     "limit": 700,
     "participants": [
       {
@@ -523,6 +523,15 @@
         "plec": "K",
         "kategoria": "NW5KM",
         "miejscowosc": "Szklary Górne",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Kamila",
+        "nazwisko": "Stolarczyk",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
         "klub": "",
         "oplacone": true
       },
@@ -1945,5 +1954,5 @@
     "registered": 178,
     "limit": 300
   },
-  "updated": "2026-05-05T21:42:22Z"
+  "updated": "2026-05-05T22:38:31Z"
 }
