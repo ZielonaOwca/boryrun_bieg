@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 357,
-    "paid": 214,
+    "paid": 215,
     "limit": 700,
     "participants": [
       {
@@ -568,6 +568,15 @@
         "plec": "M",
         "kategoria": "42KM",
         "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Krystyna",
+        "nazwisko": "Zawadzka",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Legnica",
         "klub": "",
         "oplacone": true
       },
@@ -1936,5 +1945,5 @@
     "registered": 178,
     "limit": 300
   },
-  "updated": "2026-05-05T20:39:44Z"
+  "updated": "2026-05-05T21:42:22Z"
 }
