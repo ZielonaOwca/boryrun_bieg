@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 359,
-    "paid": 221,
+    "total": 360,
+    "paid": 222,
     "limit": 700,
     "participants": [
       {
@@ -1992,6 +1992,15 @@
         "miejscowosc": "Tomaszów Bolesławiecki",
         "klub": "CSW ATLAS COPCO POLSKA",
         "oplacone": true
+      },
+      {
+        "imie": "Weronika",
+        "nazwisko": "Abramowicz",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -1999,5 +2008,5 @@
     "registered": 183,
     "limit": 300
   },
-  "updated": "2026-05-07T10:09:40Z"
+  "updated": "2026-05-07T12:07:30Z"
 }
