@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 365,
-    "paid": 227,
+    "total": 366,
+    "paid": 228,
     "limit": 700,
     "participants": [
       {
@@ -2046,6 +2046,15 @@
         "miejscowosc": "Bolesławiec",
         "klub": "Cross box trening bolesławiec",
         "oplacone": true
+      },
+      {
+        "imie": "Krzysztof",
+        "nazwisko": "Mścichowski",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Jagodzin",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2053,5 +2062,5 @@
     "registered": 188,
     "limit": 300
   },
-  "updated": "2026-05-08T17:46:32Z"
+  "updated": "2026-05-08T19:19:25Z"
 }
