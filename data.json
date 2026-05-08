@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 360,
-    "paid": 222,
+    "total": 361,
+    "paid": 223,
     "limit": 700,
     "participants": [
       {
@@ -2001,6 +2001,15 @@
         "miejscowosc": "Bolesławiec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Jakub",
+        "nazwisko": "Kamiński",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Rogoźno",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2008,5 +2017,5 @@
     "registered": 183,
     "limit": 300
   },
-  "updated": "2026-05-08T04:36:43Z"
+  "updated": "2026-05-08T06:21:52Z"
 }
