@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 362,
-    "paid": 223,
+    "total": 365,
+    "paid": 227,
     "limit": 700,
     "participants": [
       {
@@ -38,6 +38,15 @@
         "kategoria": "21KM",
         "miejscowosc": "Oborniki Śląskie",
         "klub": "OŚ Racing Team",
+        "oplacone": true
+      },
+      {
+        "imie": "Kamil",
+        "nazwisko": "Drzewiecki",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Legnica",
+        "klub": "Vulcan Runners",
         "oplacone": true
       },
       {
@@ -2010,12 +2019,39 @@
         "miejscowosc": "Rogoźno",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "-Aleksandra",
+        "nazwisko": "-Kuroń",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Monika",
+        "nazwisko": "Niedziółka",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Łomnica",
+        "klub": "Arkadia Team",
+        "oplacone": true
+      },
+      {
+        "imie": "Adrian",
+        "nazwisko": "Ostański",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "Cross box trening bolesławiec",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 184,
+    "registered": 186,
     "limit": 300
   },
-  "updated": "2026-05-08T11:17:11Z"
+  "updated": "2026-05-08T12:53:03Z"
 }
