@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 369,
-    "paid": 230,
+    "paid": 231,
     "limit": 700,
     "participants": [
       {
@@ -2057,6 +2057,15 @@
         "oplacone": true
       },
       {
+        "imie": "Arkadiusz",
+        "nazwisko": "Stępień",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Ścinawa",
+        "klub": "THE KISHONES",
+        "oplacone": true
+      },
+      {
         "imie": "Piotr",
         "nazwisko": "Sobolewski",
         "plec": "M",
@@ -2080,5 +2089,5 @@
     "registered": 190,
     "limit": 300
   },
-  "updated": "2026-05-09T21:03:29Z"
+  "updated": "2026-05-09T22:02:10Z"
 }
