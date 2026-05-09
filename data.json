@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 368,
-    "paid": 228,
+    "total": 369,
+    "paid": 229,
     "limit": 700,
     "participants": [
       {
@@ -2055,6 +2055,15 @@
         "miejscowosc": "Jagodzin",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Aneta",
+        "nazwisko": "Uryga",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Lubań",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2062,5 +2071,5 @@
     "registered": 190,
     "limit": 300
   },
-  "updated": "2026-05-09T16:56:18Z"
+  "updated": "2026-05-09T17:53:05Z"
 }
