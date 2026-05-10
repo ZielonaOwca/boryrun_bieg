@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 373,
-    "paid": 233,
+    "total": 374,
+    "paid": 234,
     "limit": 700,
     "participants": [
       {
@@ -2100,6 +2100,15 @@
         "miejscowosc": "Żary",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Kinga",
+        "nazwisko": "Migdał",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Żary",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2107,5 +2116,5 @@
     "registered": 192,
     "limit": 300
   },
-  "updated": "2026-05-10T16:11:55Z"
+  "updated": "2026-05-10T17:14:39Z"
 }
