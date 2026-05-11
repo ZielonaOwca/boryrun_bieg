@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 378,
-    "paid": 237,
+    "total": 381,
+    "paid": 239,
     "limit": 700,
     "participants": [
       {
@@ -2136,6 +2136,24 @@
         "miejscowosc": "Jelenia Góra",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Artur",
+        "nazwisko": "Żebrowski",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Amelia",
+        "nazwisko": "Górna",
+        "plec": "K",
+        "kategoria": "21KM",
+        "miejscowosc": "Tomisław",
+        "klub": "Klub Biegacza Bolesławiec",
+        "oplacone": true
       }
     ]
   },
@@ -2143,5 +2161,5 @@
     "registered": 193,
     "limit": 300
   },
-  "updated": "2026-05-11T16:48:03Z"
+  "updated": "2026-05-11T18:58:38Z"
 }
