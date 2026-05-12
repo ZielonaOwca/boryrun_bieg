@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 387,
-    "paid": 246,
+    "total": 388,
+    "paid": 248,
     "limit": 700,
     "participants": [
       {
@@ -1091,6 +1091,15 @@
         "kategoria": "SM10KM",
         "miejscowosc": "Legnica",
         "klub": "10 Brygada Łączności",
+        "oplacone": true
+      },
+      {
+        "imie": "Stanisław",
+        "nazwisko": "Safin",
+        "plec": "M",
+        "kategoria": "42KM",
+        "miejscowosc": "Osetnica",
+        "klub": "Rozbiegani Chojnów",
         "oplacone": true
       },
       {
@@ -2217,12 +2226,21 @@
         "miejscowosc": "Bolesławiec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Angelika",
+        "nazwisko": "Krzemińska",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 193,
+    "registered": 195,
     "limit": 300
   },
-  "updated": "2026-05-12T16:05:34Z"
+  "updated": "2026-05-12T18:18:29Z"
 }
