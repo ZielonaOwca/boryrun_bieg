@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 381,
-    "paid": 240,
+    "paid": 242,
     "limit": 700,
     "participants": [
       {
@@ -254,6 +254,15 @@
         "kategoria": "10KM",
         "miejscowosc": "Iłowa",
         "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Patrycja",
+        "nazwisko": "Drozd",
+        "plec": "K",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Bolesławice",
+        "klub": "43WOG",
         "oplacone": true
       },
       {
@@ -2138,6 +2147,15 @@
         "oplacone": true
       },
       {
+        "imie": "Patrycja",
+        "nazwisko": "Mruczek",
+        "plec": "K",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Lubin",
+        "klub": "",
+        "oplacone": true
+      },
+      {
         "imie": "Artur",
         "nazwisko": "Żebrowski",
         "plec": "M",
@@ -2170,5 +2188,5 @@
     "registered": 193,
     "limit": 300
   },
-  "updated": "2026-05-12T04:07:03Z"
+  "updated": "2026-05-12T06:49:44Z"
 }
