@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 382,
-    "paid": 242,
+    "total": 383,
+    "paid": 243,
     "limit": 700,
     "participants": [
       {
@@ -2181,6 +2181,15 @@
         "miejscowosc": "Tomisław",
         "klub": "Klub Biegacza Bolesławiec",
         "oplacone": true
+      },
+      {
+        "imie": "Bartłomiej",
+        "nazwisko": "Pociecha",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Lubin",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2188,5 +2197,5 @@
     "registered": 193,
     "limit": 300
   },
-  "updated": "2026-05-12T09:40:35Z"
+  "updated": "2026-05-12T11:34:29Z"
 }
