@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 381,
-    "paid": 239,
+    "paid": 240,
     "limit": 700,
     "participants": [
       {
@@ -2147,6 +2147,15 @@
         "oplacone": true
       },
       {
+        "imie": "Adam",
+        "nazwisko": "Maszudziński",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Lubin",
+        "klub": "",
+        "oplacone": true
+      },
+      {
         "imie": "Amelia",
         "nazwisko": "Górna",
         "plec": "K",
@@ -2161,5 +2170,5 @@
     "registered": 193,
     "limit": 300
   },
-  "updated": "2026-05-12T00:11:41Z"
+  "updated": "2026-05-12T04:07:03Z"
 }
