@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 395,
-    "paid": 248,
+    "total": 399,
+    "paid": 249,
     "limit": 700,
     "participants": [
       {
@@ -460,15 +460,6 @@
         "plec": "M",
         "kategoria": "10KM",
         "miejscowosc": "Legnica",
-        "klub": "",
-        "oplacone": true
-      },
-      {
-        "imie": "Marta",
-        "nazwisko": "Milczarkiewicz",
-        "plec": "K",
-        "kategoria": "10KM",
-        "miejscowosc": "Lubin",
         "klub": "",
         "oplacone": true
       },
@@ -1607,6 +1598,15 @@
         "oplacone": true
       },
       {
+        "imie": "Bartosz",
+        "nazwisko": "Rudyk",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Ścinawa",
+        "klub": "Toyota Dobrygowski Lubin",
+        "oplacone": true
+      },
+      {
         "imie": "Krzysztof",
         "nazwisko": "Nolepa",
         "plec": "M",
@@ -2235,6 +2235,15 @@
         "miejscowosc": "Bolesławiec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Rafał",
+        "nazwisko": "Kaczmarek",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Kruszyn",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2242,5 +2251,5 @@
     "registered": 195,
     "limit": 300
   },
-  "updated": "2026-05-13T12:24:52Z"
+  "updated": "2026-05-13T15:24:21Z"
 }
