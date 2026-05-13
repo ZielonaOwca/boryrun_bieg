@@ -1,6 +1,6 @@
 {
   "adults": {
-    "total": 399,
+    "total": 400,
     "paid": 249,
     "limit": 700,
     "participants": [
@@ -2248,8 +2248,8 @@
     ]
   },
   "kids": {
-    "registered": 195,
+    "registered": 197,
     "limit": 300
   },
-  "updated": "2026-05-13T15:24:21Z"
+  "updated": "2026-05-13T17:34:53Z"
 }
