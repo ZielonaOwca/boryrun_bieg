@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 406,
-    "paid": 254,
+    "total": 407,
+    "paid": 255,
     "limit": 700,
     "participants": [
       {
@@ -2289,6 +2289,15 @@
         "miejscowosc": "Wrocław",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Dariusz",
+        "nazwisko": "Jasinowski",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Lubin",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2296,5 +2305,5 @@
     "registered": 200,
     "limit": 300
   },
-  "updated": "2026-05-14T17:16:48Z"
+  "updated": "2026-05-14T19:18:09Z"
 }
