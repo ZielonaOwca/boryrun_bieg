@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 404,
-    "paid": 252,
+    "total": 406,
+    "paid": 254,
     "limit": 700,
     "participants": [
       {
@@ -82,6 +82,15 @@
         "plec": "M",
         "kategoria": "10KM",
         "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Wiesław",
+        "nazwisko": "Berdzik",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Boleslawiec",
         "klub": "",
         "oplacone": true
       },
@@ -2271,12 +2280,21 @@
         "miejscowosc": "Stary Węgliniec",
         "klub": "10 BKPanc Świętoszów",
         "oplacone": true
+      },
+      {
+        "imie": "Marcelina",
+        "nazwisko": "Sydor",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Wrocław",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 197,
+    "registered": 200,
     "limit": 300
   },
-  "updated": "2026-05-14T10:43:04Z"
+  "updated": "2026-05-14T12:19:41Z"
 }
