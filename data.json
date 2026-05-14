@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 407,
-    "paid": 255,
+    "total": 408,
+    "paid": 256,
     "limit": 700,
     "participants": [
       {
@@ -2298,6 +2298,15 @@
         "miejscowosc": "Lubin",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Hubert",
+        "nazwisko": "Lachnik",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Opole",
+        "klub": "NORDIC SPORT 2021",
+        "oplacone": true
       }
     ]
   },
@@ -2305,5 +2314,5 @@
     "registered": 220,
     "limit": 300
   },
-  "updated": "2026-05-14T20:53:14Z"
+  "updated": "2026-05-14T22:12:05Z"
 }
