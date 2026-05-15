@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 410,
-    "paid": 256,
+    "total": 412,
+    "paid": 258,
     "limit": 700,
     "participants": [
       {
@@ -2307,12 +2307,30 @@
         "miejscowosc": "Opole",
         "klub": "NORDIC SPORT 2021",
         "oplacone": true
+      },
+      {
+        "imie": "Patryk",
+        "nazwisko": "Żochowski",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Legnica",
+        "klub": "BBL Legnica",
+        "oplacone": true
+      },
+      {
+        "imie": "Magdalena",
+        "nazwisko": "Kowaliszyn",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Nielestno",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 227,
+    "registered": 232,
     "limit": 300
   },
-  "updated": "2026-05-15T10:07:30Z"
+  "updated": "2026-05-15T12:11:52Z"
 }
