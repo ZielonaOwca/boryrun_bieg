@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 419,
-    "paid": 260,
+    "paid": 261,
     "limit": 700,
     "participants": [
       {
@@ -2336,6 +2336,15 @@
         "oplacone": true
       },
       {
+        "imie": "Klaudia",
+        "nazwisko": "Glondys-Okuniewicz",
+        "plec": "K",
+        "kategoria": "10KM",
+        "miejscowosc": "Żagań",
+        "klub": "",
+        "oplacone": true
+      },
+      {
         "imie": "Konrad",
         "nazwisko": "Gozdek",
         "plec": "M",
@@ -2350,5 +2359,5 @@
     "registered": 232,
     "limit": 300
   },
-  "updated": "2026-05-16T06:34:43Z"
+  "updated": "2026-05-16T08:28:02Z"
 }
