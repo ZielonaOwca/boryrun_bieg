@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 422,
-    "paid": 263,
+    "paid": 264,
     "limit": 700,
     "participants": [
       {
@@ -2370,6 +2370,15 @@
         "miejscowosc": "Wrocław",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Lidia",
+        "nazwisko": "Sobecka",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Przejęsław",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2377,5 +2386,5 @@
     "registered": 236,
     "limit": 300
   },
-  "updated": "2026-05-16T15:07:06Z"
+  "updated": "2026-05-16T16:09:34Z"
 }
