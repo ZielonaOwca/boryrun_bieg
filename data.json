@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 419,
-    "paid": 261,
+    "total": 421,
+    "paid": 263,
     "limit": 700,
     "participants": [
       {
@@ -2352,6 +2352,24 @@
         "miejscowosc": "Bolesławiec Polska",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Magdalena",
+        "nazwisko": "Różańska",
+        "plec": "K",
+        "kategoria": "21KM",
+        "miejscowosc": "Wrocław",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Robert",
+        "nazwisko": "Różański",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Wrocław",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2359,5 +2377,5 @@
     "registered": 232,
     "limit": 300
   },
-  "updated": "2026-05-16T08:28:02Z"
+  "updated": "2026-05-16T09:59:42Z"
 }
