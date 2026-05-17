@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 428,
-    "paid": 273,
+    "total": 432,
+    "paid": 275,
     "limit": 700,
     "participants": [
       {
@@ -2411,7 +2411,7 @@
         "imie": "Magdalena",
         "nazwisko": "Różańska",
         "plec": "K",
-        "kategoria": "21KM",
+        "kategoria": "10KM",
         "miejscowosc": "Wrocław",
         "klub": "",
         "oplacone": true
@@ -2420,7 +2420,7 @@
         "imie": "Robert",
         "nazwisko": "Różański",
         "plec": "M",
-        "kategoria": "21KM",
+        "kategoria": "10KM",
         "miejscowosc": "Wrocław",
         "klub": "",
         "oplacone": true
@@ -2460,12 +2460,30 @@
         "miejscowosc": "Lubań",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Katarzyna",
+        "nazwisko": "Didikas",
+        "plec": "K",
+        "kategoria": "21KM",
+        "miejscowosc": "Lwówek Śląski",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Justyna",
+        "nazwisko": "Śmiałek",
+        "plec": "K",
+        "kategoria": "21KM",
+        "miejscowosc": "Świętoszów",
+        "klub": "-",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 244,
+    "registered": 248,
     "limit": 300
   },
-  "updated": "2026-05-17T10:50:50Z"
+  "updated": "2026-05-17T12:00:14Z"
 }
