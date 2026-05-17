@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 432,
-    "paid": 275,
+    "total": 438,
+    "paid": 277,
     "limit": 700,
     "participants": [
       {
@@ -2478,12 +2478,30 @@
         "miejscowosc": "Świętoszów",
         "klub": "-",
         "oplacone": true
+      },
+      {
+        "imie": "Rafał",
+        "nazwisko": "Malitowski",
+        "plec": "M",
+        "kategoria": "42KM",
+        "miejscowosc": "Jelcz-Laskowice",
+        "klub": "KB Harcownik Jelcz-Laskowice",
+        "oplacone": true
+      },
+      {
+        "imie": "Jarosław",
+        "nazwisko": "Stupiec",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "-",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 248,
+    "registered": 250,
     "limit": 300
   },
-  "updated": "2026-05-17T12:00:14Z"
+  "updated": "2026-05-17T13:52:56Z"
 }
