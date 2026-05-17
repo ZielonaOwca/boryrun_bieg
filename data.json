@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 427,
-    "paid": 270,
+    "paid": 271,
     "limit": 700,
     "participants": [
       {
@@ -551,6 +551,15 @@
         "kategoria": "10KM",
         "miejscowosc": "Bolesławiec",
         "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Mirosław",
+        "nazwisko": "Bochnak",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Przemków",
+        "klub": "Biegam z Borderem",
         "oplacone": true
       },
       {
@@ -2437,8 +2446,8 @@
     ]
   },
   "kids": {
-    "registered": 237,
+    "registered": 240,
     "limit": 300
   },
-  "updated": "2026-05-17T07:44:43Z"
+  "updated": "2026-05-17T09:25:06Z"
 }
