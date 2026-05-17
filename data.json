@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 439,
-    "paid": 278,
+    "total": 440,
+    "paid": 279,
     "limit": 700,
     "participants": [
       {
@@ -2505,12 +2505,21 @@
         "miejscowosc": "Węgliniec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Marcin",
+        "nazwisko": "Potocki",
+        "plec": "M",
+        "kategoria": "42KM",
+        "miejscowosc": "Żary",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 257,
+    "registered": 258,
     "limit": 300
   },
-  "updated": "2026-05-17T16:02:19Z"
+  "updated": "2026-05-17T17:14:26Z"
 }
