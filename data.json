@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 441,
-    "paid": 279,
+    "total": 443,
+    "paid": 280,
     "limit": 700,
     "participants": [
       {
@@ -2514,12 +2514,21 @@
         "miejscowosc": "Żary",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Anna",
+        "nazwisko": "Madej",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Kruszyn",
+        "klub": "-",
+        "oplacone": true
       }
     ]
   },
   "kids": {
-    "registered": 261,
+    "registered": 264,
     "limit": 300
   },
-  "updated": "2026-05-17T18:12:22Z"
+  "updated": "2026-05-17T19:37:51Z"
 }
