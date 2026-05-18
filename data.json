@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 454,
-    "paid": 290,
+    "total": 455,
+    "paid": 292,
     "limit": 700,
     "participants": [
       {
@@ -2613,6 +2613,24 @@
         "miejscowosc": "Lubin",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Bożena",
+        "nazwisko": "Kowzan",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Nowogrodziec",
+        "klub": "-",
+        "oplacone": true
+      },
+      {
+        "imie": "Danuta",
+        "nazwisko": "Płachcińska",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Nowogrodziec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2620,5 +2638,5 @@
     "registered": 289,
     "limit": 300
   },
-  "updated": "2026-05-18T19:13:02Z"
+  "updated": "2026-05-18T20:47:58Z"
 }
