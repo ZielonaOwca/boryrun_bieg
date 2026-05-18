@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 455,
-    "paid": 292,
+    "total": 456,
+    "paid": 295,
     "limit": 700,
     "participants": [
       {
@@ -2327,6 +2327,15 @@
         "oplacone": true
       },
       {
+        "imie": "Marek",
+        "nazwisko": "Lewandowski",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Żary",
+        "klub": "23 Śląski Pułk Artylerii",
+        "oplacone": true
+      },
+      {
         "imie": "Tomasz",
         "nazwisko": "Wróblewski",
         "plec": "M",
@@ -2606,6 +2615,15 @@
         "oplacone": true
       },
       {
+        "imie": "Rajmund",
+        "nazwisko": "Ignaczak",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "23 Śląski Pułk Artylerii",
+        "oplacone": true
+      },
+      {
         "imie": "Ireneusz",
         "nazwisko": "Jesion",
         "plec": "M",
@@ -2631,6 +2649,15 @@
         "miejscowosc": "Nowogrodziec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Jan",
+        "nazwisko": "Choryłek",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Osieczów",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2638,5 +2665,5 @@
     "registered": 289,
     "limit": 300
   },
-  "updated": "2026-05-18T20:47:58Z"
+  "updated": "2026-05-18T22:03:47Z"
 }
