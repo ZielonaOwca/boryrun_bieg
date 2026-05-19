@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 467,
-    "paid": 307,
+    "total": 469,
+    "paid": 309,
     "limit": 700,
     "participants": [
       {
@@ -2766,6 +2766,24 @@
         "miejscowosc": "Nowogrodziec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Monika",
+        "nazwisko": "Ziętal",
+        "plec": "K",
+        "kategoria": "21KM",
+        "miejscowosc": "Lubin",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Łukasz",
+        "nazwisko": "Misiura",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2773,5 +2791,5 @@
     "registered": 295,
     "limit": 300
   },
-  "updated": "2026-05-19T12:12:04Z"
+  "updated": "2026-05-19T15:51:13Z"
 }
