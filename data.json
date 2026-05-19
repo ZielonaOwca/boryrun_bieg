@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 459,
-    "paid": 297,
+    "total": 467,
+    "paid": 307,
     "limit": 700,
     "participants": [
       {
@@ -2642,6 +2642,15 @@
         "oplacone": true
       },
       {
+        "imie": "Wojciech",
+        "nazwisko": "Konopski",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Lubań",
+        "klub": "LUBIĘ CHODZIĆ LUBAŃ",
+        "oplacone": true
+      },
+      {
         "imie": "Ireneusz",
         "nazwisko": "Jesion",
         "plec": "M",
@@ -2676,6 +2685,87 @@
         "miejscowosc": "Osieczów",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Kamil",
+        "nazwisko": "Makoś",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "23PUŁK ARTYLERII  BOLESŁAWIEC",
+        "oplacone": true
+      },
+      {
+        "imie": "Waldemar",
+        "nazwisko": "Nalazek",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Osiecznica",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Agata",
+        "nazwisko": "Samsonowicz",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Zuzanna",
+        "nazwisko": "Samsonowicz",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Adam",
+        "nazwisko": "Kłos",
+        "plec": "M",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "-",
+        "oplacone": true
+      },
+      {
+        "imie": "Klaudia",
+        "nazwisko": "Petters",
+        "plec": "K",
+        "kategoria": "42KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "JOMA TRAIL",
+        "oplacone": true
+      },
+      {
+        "imie": "Danuta",
+        "nazwisko": "Skoczyńska",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Nowogrodziec",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Agnieszka",
+        "nazwisko": "Dyjecka",
+        "plec": "K",
+        "kategoria": "21KM",
+        "miejscowosc": "Tomaszów Bolesławiecki",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Elżbieta",
+        "nazwisko": "Ostrowska",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Nowogrodziec",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -2683,5 +2773,5 @@
     "registered": 295,
     "limit": 300
   },
-  "updated": "2026-05-19T08:49:30Z"
+  "updated": "2026-05-19T12:12:04Z"
 }
