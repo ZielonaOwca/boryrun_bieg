@@ -1,7 +1,7 @@
 {
   "adults": {
     "total": 469,
-    "paid": 309,
+    "paid": 310,
     "limit": 700,
     "participants": [
       {
@@ -28,6 +28,15 @@
         "plec": "K",
         "kategoria": "21KM",
         "miejscowosc": "Zielonka",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Paweł",
+        "nazwisko": "Kwiatkowski",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Wałbrzych",
         "klub": "",
         "oplacone": true
       },
@@ -2788,8 +2797,8 @@
     ]
   },
   "kids": {
-    "registered": 295,
+    "registered": 297,
     "limit": 300
   },
-  "updated": "2026-05-19T15:51:13Z"
+  "updated": "2026-05-19T18:06:47Z"
 }
