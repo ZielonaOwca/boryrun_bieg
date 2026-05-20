@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 479,
-    "paid": 321,
+    "total": 481,
+    "paid": 323,
     "limit": 700,
     "participants": [
       {
@@ -332,7 +332,7 @@
         "imie": "Karolina",
         "nazwisko": "Gołczyk",
         "plec": "K",
-        "kategoria": "42KM",
+        "kategoria": "21KM",
         "miejscowosc": "Katowice",
         "klub": "Team Wine Not?",
         "oplacone": true
@@ -560,6 +560,15 @@
         "kategoria": "10KM",
         "miejscowosc": "Bolesławiec",
         "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Adrian",
+        "nazwisko": "Kos",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Smolec",
+        "klub": "Smolecka Zadyszka",
         "oplacone": true
       },
       {
@@ -2892,6 +2901,15 @@
         "miejscowosc": "Nowogrodziec",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Martyna",
+        "nazwisko": "Olszowy",
+        "plec": "K",
+        "kategoria": "SM10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "23 Śląski Pułk Artylerii",
+        "oplacone": true
       }
     ]
   },
@@ -2899,5 +2917,5 @@
     "registered": 300,
     "limit": 300
   },
-  "updated": "2026-05-20T14:07:33Z"
+  "updated": "2026-05-20T17:30:22Z"
 }
