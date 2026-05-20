@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 481,
-    "paid": 323,
+    "total": 482,
+    "paid": 324,
     "limit": 700,
     "participants": [
       {
@@ -2910,6 +2910,15 @@
         "miejscowosc": "Bolesławiec",
         "klub": "23 Śląski Pułk Artylerii",
         "oplacone": true
+      },
+      {
+        "imie": "Jan",
+        "nazwisko": "Kaczor",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Wałbrzych",
+        "klub": "10 BKPanc Świętoszów",
+        "oplacone": true
       }
     ]
   },
@@ -2917,5 +2926,5 @@
     "registered": 300,
     "limit": 300
   },
-  "updated": "2026-05-20T17:30:22Z"
+  "updated": "2026-05-20T19:50:51Z"
 }
