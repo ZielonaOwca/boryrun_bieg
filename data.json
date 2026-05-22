@@ -89,7 +89,7 @@
         "imie": "Daniel",
         "nazwisko": "Seher",
         "plec": "M",
-        "kategoria": "42KM",
+        "kategoria": "21KM",
         "miejscowosc": "Weißwasser",
         "klub": "Laufbewegung Weißwasser",
         "oplacone": true
@@ -98,7 +98,7 @@
         "imie": "Sophia",
         "nazwisko": "Seher-Mrosko",
         "plec": "K",
-        "kategoria": "42KM",
+        "kategoria": "21KM",
         "miejscowosc": "Weißwasser",
         "klub": "Laufbewegung Weißwasser",
         "oplacone": true
@@ -3511,5 +3511,5 @@
     "registered": 300,
     "limit": 300
   },
-  "updated": "2026-05-21T23:04:22Z"
+  "updated": "2026-05-22T00:15:46Z"
 }
