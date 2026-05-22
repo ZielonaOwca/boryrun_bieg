@@ -1,6 +1,6 @@
 {
   "adults": {
-    "total": 550,
+    "total": 547,
     "paid": 395,
     "limit": 700,
     "participants": [
@@ -2165,8 +2165,8 @@
         "oplacone": true
       },
       {
-        "imie": "-Aleksandra",
-        "nazwisko": "-Kuroń",
+        "imie": "Aleksandra",
+        "nazwisko": "Kuroń",
         "plec": "K",
         "kategoria": "10KM",
         "miejscowosc": "Bolesławiec",
@@ -3565,5 +3565,5 @@
     "registered": 300,
     "limit": 300
   },
-  "updated": "2026-05-22T16:26:33Z"
+  "updated": "2026-05-22T18:16:46Z"
 }
