@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 547,
-    "paid": 391,
+    "total": 549,
+    "paid": 394,
     "limit": 700,
     "participants": [
       {
@@ -2768,6 +2768,15 @@
         "oplacone": true
       },
       {
+        "imie": "Henryka",
+        "nazwisko": "Kędzia",
+        "plec": "K",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "Stowarzyszenie Imperium Nordic Bodzia Team",
+        "oplacone": true
+      },
+      {
         "imie": "Waldemar",
         "nazwisko": "Nalazek",
         "plec": "M",
@@ -3507,6 +3516,15 @@
       },
       {
         "imie": "Rafał",
+        "nazwisko": "Mikulski",
+        "plec": "M",
+        "kategoria": "42KM",
+        "miejscowosc": "Lubin",
+        "klub": "",
+        "oplacone": true
+      },
+      {
+        "imie": "Rafał",
         "nazwisko": "Kazimierz",
         "plec": "M",
         "kategoria": "21KM",
@@ -3522,6 +3540,15 @@
         "miejscowosc": "Głuszyca",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Marek",
+        "nazwisko": "Kijowski",
+        "plec": "M",
+        "kategoria": "10KM",
+        "miejscowosc": "Bolesławiec",
+        "klub": "Biegamy w Bolesławcu",
+        "oplacone": true
       }
     ]
   },
@@ -3529,5 +3556,5 @@
     "registered": 300,
     "limit": 300
   },
-  "updated": "2026-05-22T11:20:18Z"
+  "updated": "2026-05-22T13:53:02Z"
 }
