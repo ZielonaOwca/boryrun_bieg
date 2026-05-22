@@ -1,7 +1,7 @@
 {
   "adults": {
-    "total": 545,
-    "paid": 389,
+    "total": 547,
+    "paid": 391,
     "limit": 700,
     "participants": [
       {
@@ -2737,7 +2737,7 @@
         "plec": "K",
         "kategoria": "NW5KM",
         "miejscowosc": "Nowogrodziec",
-        "klub": "-",
+        "klub": "Stowarzyszenie Imperium Nordic Bodzia Team",
         "oplacone": true
       },
       {
@@ -2746,7 +2746,7 @@
         "plec": "K",
         "kategoria": "NW5KM",
         "miejscowosc": "Nowogrodziec",
-        "klub": "",
+        "klub": "Stowarzyszenie Imperium Nordic Bodzia Team",
         "oplacone": true
       },
       {
@@ -2818,7 +2818,7 @@
         "plec": "K",
         "kategoria": "NW5KM",
         "miejscowosc": "Nowogrodziec",
-        "klub": "",
+        "klub": "Stowarzyszenie Imperium Nordic Bodzia Team",
         "oplacone": true
       },
       {
@@ -2836,7 +2836,7 @@
         "plec": "K",
         "kategoria": "NW5KM",
         "miejscowosc": "Nowogrodziec",
-        "klub": "",
+        "klub": "Stowarzyszenie Imperium Nordic Bodzia Team",
         "oplacone": true
       },
       {
@@ -2926,7 +2926,7 @@
         "plec": "K",
         "kategoria": "NW5KM",
         "miejscowosc": "Nowogrodziec",
-        "klub": "",
+        "klub": "Stowarzyszenie Imperium Nordic Bodzia Team",
         "oplacone": true
       },
       {
@@ -3504,6 +3504,24 @@
         "miejscowosc": "Osiecznica",
         "klub": "",
         "oplacone": true
+      },
+      {
+        "imie": "Rafał",
+        "nazwisko": "Kazimierz",
+        "plec": "M",
+        "kategoria": "21KM",
+        "miejscowosc": "Wrocław",
+        "klub": "Kozanowski Klub Biegacza",
+        "oplacone": true
+      },
+      {
+        "imie": "Wojciech",
+        "nazwisko": "Niedziółka",
+        "plec": "M",
+        "kategoria": "NW5KM",
+        "miejscowosc": "Głuszyca",
+        "klub": "",
+        "oplacone": true
       }
     ]
   },
@@ -3511,5 +3529,5 @@
     "registered": 300,
     "limit": 300
   },
-  "updated": "2026-05-22T08:14:31Z"
+  "updated": "2026-05-22T11:20:18Z"
 }
